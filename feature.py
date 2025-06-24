@@ -99,8 +99,8 @@ k_gray = np.array(np.zeros((10,10)))
 k_h = np.array(np.zeros((10,10)))
 #k1 = np.array(np.zeros((10,10)))
 #k1_gray = np.array(np.zeros((10,10)))
-for col in range(0,int(height/10) - height%10):
-    for row in range(0,int(width/10) - width%10):
+for col in range(0, height // 10):
+    for row in range(0, width // 10):
         k = np.round(lbp[col*10:col*10 + 10,row*10:row*10 + 10])               
         k_gray = gray1[col*10:col*10 + 10,row*10:row*10 + 10]
         k_h = h[col*10:col*10 + 10,row*10:row*10 + 10]
