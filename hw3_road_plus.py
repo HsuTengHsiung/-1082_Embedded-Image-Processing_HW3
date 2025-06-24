@@ -36,7 +36,7 @@ def statistics(img,name,img_gray,name_gray,img_h):
     return output
 def imgfilter(img,height, width):
     img123 = img
-    height, width = int(height/10) - height%10, int(width/10) - width%10
+    height, width = height // 10, width // 10
     for i in range(1,height-1):
         for j in range(1,width-1):
 #            if(img[i-1,j] >200 and img[i-1,j+1] >200 and img[i-1,j-1] >200 and img[i,j-1] >200 \
@@ -80,10 +80,10 @@ lbp = lbp / 16
 k = np.array(np.zeros((10,10)))
 k_gray = np.array(np.zeros((10,10)))
 k_h = np.array(np.zeros((10,10)))
-image_new = np.array(np.zeros((int(height/10) - height%10,int(width/10) - width%10)))
+image_new = np.zeros((height // 10, width // 10))
 
-for col in range(0,int(height/10) - height%10):
-    for row in range(0,int(width/10) - width%10):
+for col in range(0, height // 10):
+    for row in range(0, width // 10):
         k = np.round(lbp[col*10:col*10 + 10,row*10:row*10 + 10])               
         k_gray = gray1[col*10:col*10 + 10,row*10:row*10 + 10]
         k_h = h[col*10:col*10 + 10,row*10:row*10 + 10]
